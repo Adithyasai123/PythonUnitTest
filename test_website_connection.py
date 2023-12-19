@@ -8,13 +8,14 @@ class TestWebsiteConnection(unittest.TestCase):
 
         try:
             # Attempt to connect to the website
+            print(f"Attempting to connect to {url}")
             response = requests.get(url)
 
             # Check if the response status code indicates a successful connection
             self.assertEqual(response.status_code, 200, f"Failed to load website. Status code: {response.status_code}")
 
             # Print a message indicating a successful connection
-            print("Connected to the website. Connection is up!")
+            print("Connection successful. Website is up!")
 
         except requests.RequestException as e:
             # Print an error message if the connection fails
